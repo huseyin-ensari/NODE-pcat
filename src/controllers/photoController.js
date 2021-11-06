@@ -1,4 +1,6 @@
 const Photo = require('../models/Photo');
+const fs = require('fs');
+const path = require('path');
 
 const upload = async (req, res, next) => {
   try {
@@ -31,6 +33,8 @@ const deletePhoto = async (req, res, next) => {
   const { id } = req.params;
 
   const photo = await Photo.findByIdAndDelete(id);
+  let deletedPhoto = path.join(__dirname, '../uploads/' + photo.photoURL);
+  fs.unlinkSync(deletedPhoto);
 
   return res.redirect('/');
 };
