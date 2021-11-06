@@ -1,0 +1,29 @@
+{
+  "name": "pcat",
+  "version": "1.0.0",
+  "description": "photo gallery",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev" : "nodemon app.js"
+  },
+  "keywords": [
+    "node",
+    "photo",
+    "pug",
+    "multer"
+  ],
+  "author": "Hüseyin Ensari <hsynensari@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12",
+    "multer": "^1.4.3",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14",
+    "prettier": "^2.4.1"
+  }
+}
