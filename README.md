@@ -7,6 +7,10 @@ if you want to try the working version of this repository [click](https://node-p
 
 ---
 
+![gif](forReadme/gif.gif)
+
+---
+
 What to do if you want to download and use the repository;
 
 📂 .env
