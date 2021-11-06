@@ -1,0 +1,28 @@
+include ./layouts/main-layout
+
+block title 
+    title= photo.title
+
+block content
+    img.d-block.mx-auto(src="/img/"+ photo.photoURL, alt="alt" width=auto height="600" )
+    .d-flex.justify-content-center.mt-2
+        h5= photo.title
+    .d-flex.justify-content-center.mt-1
+        button.btn.btn-info(type="button" data-bs-toggle='modal' data-bs-target='#exampleModala') Title Change
+        a.btn.btn-danger.ms-1(href="/photo/delete/"+photo.id) Delete
+
+
+#exampleModala.modal.fade(tabindex='-1' aria-labelledby='exampleModalLabela' aria-hidden='true')
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h5#exampleModalLabela.modal-title Title Change
+        button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+      .modal-body
+        form.row.g-3(action='/photo/update/'+photo.id  method='post')
+            .col-auto
+                input.form-control(name='title' type='text' placeholder='Title')
+            .modal-footer
+                button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                button.btn.btn-info(type='submit') Save changes
+        //- img.d-block.w-1(src="/img/"+ photo.photoURL, alt="alt" width=50)

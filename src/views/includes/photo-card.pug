@@ -1,0 +1,9 @@
+each photo in allPhoto
+    .card(style='width: 18rem;')
+        img.card-img-top(src='/img/'+photo.photoURL height="400")
+        .card-body
+        p.card-text= photo.title
+        a.stretched-link.btn.btn-outline-dark(href='/'+photo.id) Detail
+
+
+

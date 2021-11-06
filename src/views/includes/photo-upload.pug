@@ -1,0 +1,22 @@
+// Button trigger modal
+button.btn.btn-outline-primary(type='button' data-bs-toggle='modal' data-bs-target='#exampleModal')
+  | Photo Upload
+// Modal
+#exampleModal.modal.fade(tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true')
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h5#exampleModalLabel.modal-title Photo Upload
+        button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+      .modal-body
+        form.row.g-3(action='/photo/upload' method='post' enctype='multipart/form-data')
+          .col-auto
+            input.form-control(name='title' type='text' placeholder='Title')
+          .col-auto
+            .mb-3
+              input#formFile.form-control(name='photo' type='file')
+
+
+          .modal-footer
+            button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+            button.btn.btn-primary(type='submit') Upload
