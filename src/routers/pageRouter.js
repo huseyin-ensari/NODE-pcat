@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const { homePage } = require('../controllers/pageController');
+const { homePage, photoDetail } = require('../controllers/pageController');
 
 router.get('/', homePage);
+router.get('/:id', photoDetail);
 
 module.exports = router;

@@ -10,7 +10,7 @@ require('./src/configs/dbConnection');
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'pug');
-app.set('views', path.resolve(__dirname, '/src/views'));
+app.set('views', path.resolve(__dirname, './src/views'));
 app.use('/img', express.static(path.join(__dirname, '/src/uploads')));
 // router
 app.use('/', indexRouter);
